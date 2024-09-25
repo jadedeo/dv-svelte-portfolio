@@ -1,0 +1,210 @@
+<svelte:head>
+	<title>Resume</title>
+</svelte:head>
+<main>
+    <div class="non-card-container columns">
+      <div><img src="../images/resume.png" /></div>
+      <div>
+        <h1>Resume</h1>
+        <p>
+          I'm an interdisciplinary student of tech, art & design with two
+          years of industry experience. As a graduate student at CMU, I hope
+          to gain formal design training & expand my development toolkit.
+        </p>
+      </div>
+    </div>
+    <section class="resume-experiences">
+      <div class="card columns resume-item">
+        <div class="experience-main-info">
+          <h1>Illustrator & Graphic Designer</h1>
+          <h3>Freelance</h3>
+          <p><time datetime="2020-01">Jan. 2020</time> - Present</p>
+        </div>
+        <div>
+          <ul>
+            <li>
+              Developed unique illustrations for clients such as RiotGames,
+              Bonnier Books UK, Knights Of Media, Illumicrate, etc.
+            </li>
+            <li>
+              Successfully managed diverse illustration & design commissions
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card columns resume-item">
+        <div class="experience-main-info">
+          <h1>Marketing Committee</h1>
+          <h3>Blk + Brwn Book Designers</h3>
+          <p><time datetime="2024-02">Feb. 2024</time> - Present</p>
+        </div>
+        <div>
+          <ul>
+            <li>
+              Designing promotional materials for the organization's upcoming
+              events, as requested by other committees & the board of
+              directors
+            </li>
+            <li>
+              Currently working on a redesign of the organization webite,
+              including the UI/UX of the Freelance Directory
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card columns resume-item">
+        <div class="experience-main-info">
+          <h1>Associate Web Developer</h1>
+          <h3>Penguin Random House</h3>
+          <p>
+            <time datetime="2023-10">Oct. 2023</time> -
+            <time datetime="2024-08">Aug. 2024</time>
+          </p>
+        </div>
+        <div>
+          <ul>
+            <li>
+              Contributed to Splash, a custom-built content management system,
+              initially focusing on implementing feature & design updates to
+              enhance system functionality & user experience
+            </li>
+            <li>
+              Development on the Gift with Purchase initiative, a complex, key
+              project component
+            </li>
+            <li>Upgraded the Splash app from Vue 2 to 3</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card columns resume-item">
+        <div class="experience-main-info">
+          <h1>Contract Web Developer</h1>
+          <h3>Penguin Random House</h3>
+          <p>
+            <time datetime="2022-10">Oct. 2022</time> -
+            <time datetime="2023-09">Sep. 2023</time>
+          </p>
+        </div>
+        <div>
+          <ul>
+            <li>
+              Worked in Consumer Applications to develop the Division Platform
+              WordPress theme
+            </li>
+            <li>
+              Implemented custom blocks, search functionality, newsletter
+              subscription service & more
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card columns resume-item">
+        <div class="experience-main-info">
+          <h1>IT Intern</h1>
+          <h3>Penguin Random House</h3>
+          <p>
+            <time datetime="2022-06">Jun. 2022</time> -
+            <time datetime="2022-08">Aug. 2022</time>
+          </p>
+        </div>
+        <div>
+          <ul>
+            <li>
+              Worked on tasks such as testing & debugging while getting
+              hands-on experience with WordPress theme development, Pantheon
+              hosting, WAF testing & site maintenance
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card columns resume-item">
+        <div class="experience-main-info">
+          <h1>Computer Science Tutor</h1>
+          <h3>St. John's University</h3>
+          <p>
+            <time datetime="2021-09">Sep. 2021</time> -
+            <time datetime="2022-05">May 2022</time>
+          </p>
+        </div>
+        <div>
+          <ul>
+            <li>
+              Delivered effective instruction for Computer Science students,
+              focusing on concept clarification & practical application,
+              resulting in improved academic performance
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card columns resume-item">
+        <div class="experience-main-info">
+          <h1>Web Development Teaching Assistant</h1>
+          <h3>Girls Who Code</h3>
+          <div>
+            <p>
+              <time datetime="2020-06">Jun. 2020</time> -
+              <time datetime="2020-08">Aug. 2020</time>
+            </p>
+            <p>
+              <time datetime="2021-06">Jun. 2021</time> -
+              <time datetime="2020-08">Aug. 2021</time>
+            </p>
+          </div>
+        </div>
+        <div>
+          <ul>
+            <li>
+              Educated high school students in web development fundamentals,
+              fostering programming skills & inspiring interest in the tech
+              industry
+            </li>
+            <li>
+              Collaborated with leading tech companies to organize enriching
+              workshops & events
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+<style>
+  /* RESUME */
+  .resume-experiences {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-bottom: 50px;
+  }
+
+  .resume-item h1,
+  .resume-item h3 {
+    margin: 0;
+    line-height: 1.1em;
+  }
+
+  .card.resume-item {
+    margin: unset;
+    display: grid;
+    grid-template-columns: 25% 75%;
+
+    @media screen and (max-width: 769px) {
+      grid-template-columns: auto;
+    }
+  }
+  .card.resume-item p {
+    margin: 0;
+  }
+
+  .experience-main-info {
+    display: grid;
+    gap: 15px;
+  }
+</style>
