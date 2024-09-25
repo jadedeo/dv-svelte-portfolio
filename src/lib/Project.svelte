@@ -17,4 +17,9 @@
     grid-row: span 3;
     margin-bottom:50px;
   }
+  .gallery-item h2,
+  .gallery-item h3
+  {
+    margin: 0;
+  }
 </style>
