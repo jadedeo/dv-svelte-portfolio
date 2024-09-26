@@ -25,7 +25,7 @@
     </div>
     <section id="github-stats" class="card">
         <h2>My GitHub Stats</h2>
-        {#await fetch("https://api.github.com/users/leaverou") }
+        {#await fetch("https://api.github.com/users/jadedeo") }
             <p>Loading...</p>
         {:then response}
             {#await response.json()}
