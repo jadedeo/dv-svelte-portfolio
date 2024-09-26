@@ -1,7 +1,9 @@
 <script>
     import projects from '$lib/projects.json';
     import ProjectList from "$lib/ProjectList.svelte";
-  </script>
+
+    let myGitHubData = {};
+</script>
 
 <svelte:head>
 	<title>My Portfolio (with Svelte!)</title>
@@ -21,6 +23,30 @@
             <small><a href="https://storyset.com/business" target="_blank">Illustrations by Storyset</a></small>
         </div>
     </div>
+    <section id="github-stats" class="card">
+        <h2>My GitHub Stats</h2>
+        {#await fetch("https://api.github.com/users/leaverou") }
+            <p>Loading...</p>
+        {:then response}
+            {#await response.json()}
+                <p>Decoding...</p>
+            {:then data}
+                <div id="stats-content">
+                    <p>Followers: {data.followers}</p>
+                    <p>Followers: {data.following}</p>
+                    <p>Public Repos: {data.public_repos}</p>
+                </div>
+            {:catch error}
+                <p class="error">
+                    Something went wrong: {error.message}
+                </p>
+            {/await}
+        {:catch error}
+            <p class="error">
+                Something went wrong: {error.message}
+            </p>
+        {/await}
+    </section>
     <div id="latest-projects">
         <h2 class="gallery-heading">Latest Projects</h2>
         <ProjectList data={projects} sliceAt={3} hLevel={3}/>
@@ -28,6 +54,15 @@
 </main>
 
 <style>
+#github-stats.card{
+    width:100%;
+}
+#stats-content{
+ display: grid;
+ grid-template-columns: 1fr 1fr 1fr;
+ column-gap:25px;
+}
+
 #latest-projects{
     margin-top: 75px;
 }
