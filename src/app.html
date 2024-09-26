@@ -2,10 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%sveltekit.assets%/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     %sveltekit.head%
     <script src="%sveltekit.assets%/global.js" type="module"></script>
+
+    <script>
+      let root = document.documentElement;
+      let colorScheme = localStorage.colorScheme ?? "light dark";
+      root.style.setProperty("color-scheme", colorScheme);
+    </script>
+
+    <link rel="icon" href="%sveltekit.assets%/favicon.png" />
+
     <title>My Portfolio (with Svelte!)</title>
   </head>
   <body data-sveltekit-preload-data="hover">
