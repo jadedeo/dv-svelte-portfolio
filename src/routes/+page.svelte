@@ -20,7 +20,7 @@
             of my electives. This portfolio site will eventually feature my
             class projects.
             </p>
-            <small><a href="https://storyset.com/business" target="_blank">Illustrations by Storyset</a></small>
+            <small><a href="https://storyset.com/business" target="_blank" class="uppercase fade">Illustrations by Storyset</a></small>
         </div>
     </div>
     <section id="github-stats" class="card">
@@ -32,9 +32,12 @@
                 <p>Decoding...</p>
             {:then data}
                 <div id="stats-content">
-                    <p>Followers: {data.followers}</p>
-                    <p>Followers: {data.following}</p>
-                    <p>Public Repos: {data.public_repos}</p>
+                    <small class="uppercase fade">Followers</small>
+                    <small class="uppercase fade">Following</small>
+                    <small class="uppercase fade">Public Repos</small>
+                    <span class="stats-value">{data.followers}</span>
+                    <span class="stats-value">{data.following}</span>
+                    <span class="stats-value">{data.public_repos}</span>
                 </div>
             {:catch error}
                 <p class="error">
@@ -56,14 +59,30 @@
 <style>
 #github-stats.card{
     width:100%;
+    margin-top:50px;
 }
 #stats-content{
  display: grid;
  grid-template-columns: 1fr 1fr 1fr;
- column-gap:25px;
+ grid-template-rows: auto auto;
+ column-gap: 25px;
+ row-gap: 0;
+}
+
+.stats-value{
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.uppercase{
+    text-transform: uppercase;
+}
+
+.fade{
+    color: gray;
 }
 
 #latest-projects{
-    margin-top: 75px;
+    margin-top: 50px;
 }
 </style>

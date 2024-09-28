@@ -2,7 +2,6 @@
   --page-background: #dfdede;
   --card-background: #f4f3f3;
   --card-shadow: rgba(0, 0, 0, 0.1);
-  --text-color: #1e1d1d;
   --accent: #ff725e;
 }
 
@@ -93,4 +92,8 @@ a:hover {
   @media screen and (max-width: 769px) {
     grid-template-columns: auto;
   }
+}
+
+.gallery-heading {
+  margin-top: 0;
 }
