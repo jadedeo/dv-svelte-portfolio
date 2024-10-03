@@ -3,7 +3,7 @@
 </svelte:head>
 <main>
     <div class="non-card-container columns">
-      <div><img src="../images/resume.png" /></div>
+      <div><img src="images/resume.png" /></div>
       <div>
         <h1>Resume</h1>
         <p>

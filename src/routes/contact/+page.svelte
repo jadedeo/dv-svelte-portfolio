@@ -4,7 +4,7 @@
 <main>
     <div class="columns card">
       <div>
-        <img src="../images/mail.png" />
+        <img src="images/mail.png" />
       </div>
       <div>
         <h1>Contact</h1>
