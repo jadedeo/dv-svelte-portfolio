@@ -5,6 +5,7 @@
 
 <article class="gallery-item card">
     <img src={data.image} alt="">
+    <small>{data.year}</small>
     <svelte:element this={"h" + hLevel}>{ data.title }</svelte:element>
     <p>{data.description}</p>
 </article>
@@ -14,7 +15,7 @@
     min-width: unset;
     display: grid;
     grid-template-rows: subgrid;
-    grid-row: span 3;
+    grid-row: span 4;
     margin-bottom:50px;
   }
   .gallery-item h2,
