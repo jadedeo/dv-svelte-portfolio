@@ -37,7 +37,7 @@
   $: selectedYear = selectedYearIndex > -1 ? pieData[selectedYearIndex].label : null;
 
   let filteredByYear;
-  $: filteredByYear = filteredProjects.filter(project => {
+  $: filteredByYear = projects.filter(project => {
     if (selectedYear) {
       return project.year === selectedYear;
     }
@@ -53,12 +53,18 @@
 </svelte:head>
 <main>
   <h3 class="gallery-heading">{ filteredProjects.length } Projects</h3>
-  <Pie data={pieData} bind:selectedIndex={selectedYearIndex}/>
+  {#if filteredProjects.length > 0}
+    <Pie data={pieData} bind:selectedIndex={selectedYearIndex} />
+  {/if}
 
   <input class="search-input" type="search" bind:value={query}
   aria-label="Search projects" placeholder="🔍     Search projects…" />
 
-  <ProjectList data={filteredByYear} hLevel={2}/>
+  {#if filteredProjects.length > 0}
+    <ProjectList data={filteredProjects} hLevel={2}/>
+  {:else}
+    <p>No projects found.</p>
+  {/if}
 
 </main>
 
@@ -68,7 +74,6 @@
     border:0;
     padding:25px 35px;
     border-radius:10px;
-    /* background-color:pink; */
     background-color: color-mix(in oklch, var(--card-background), canvas 75%);
     font-size:16px;
   }
