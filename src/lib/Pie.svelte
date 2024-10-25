@@ -1,6 +1,8 @@
 <script>
     import * as d3 from 'd3';
 
+    export let units = "";
+
     let arcGenerator = d3.arc().innerRadius(0).outerRadius(50);
 
     let arc = arcGenerator({
@@ -52,7 +54,7 @@
         {#each data as d, index}
             <li style="--color: { colors(index) }">
                 <span class="swatch"></span>
-                <p>{d.label} <em>({d.value} {d.value === 1 ? 'project' : 'projects'})</em></p>
+                <p>{d.label} <em>({d.value} {d.value === 1 ? units : units + "s"})</em></p>
             </li>
         {/each}
     </ul>

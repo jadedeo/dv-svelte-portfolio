@@ -54,7 +54,7 @@
 <main>
   <h3 class="gallery-heading">{ filteredProjects.length } Projects</h3>
   {#if filteredProjects.length > 0}
-    <Pie data={pieData} bind:selectedIndex={selectedYearIndex} />
+    <Pie data={pieData} bind:selectedIndex={selectedYearIndex} units="project"/>
   {/if}
 
   <input class="search-input" type="search" bind:value={query}
